@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnderCore Pixel Studio</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+body{
+  color:white;
+  background:black;
+  overflow-x:hidden;
+}
+
+/* Fondo principal */
+.hero{
+  position:relative;
+  height:100vh;
+  background:url('https://cdn.discordapp.com/attachments/1470769649074442254/1470996183924080824/ChatGPT_Image_10_feb_2026_11_12_57_p.m..png?ex=698d5374&is=698c01f4&hm=69d4ffef61f75b2cc979044dcdbc775c30acd45ec168f594e08f0ec9aede1654&') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+.content{
+  position:relative;
+  z-index:3;
+}
+
+h1{
+  font-size:4rem;
+  letter-spacing:4px;
+  text-shadow:0 0 20px purple;
+}
+
+button{
+  margin-top:25px;
+  padding:14px 30px;
+  border:none;
+  border-radius:6px;
+  background:#8b5cf6;
+  color:white;
+  cursor:pointer;
+  font-size:1rem;
+  box-shadow:0 0 12px #8b5cf6;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+/* Dragón del End animado */
+.dragon{
+  position:absolute;
+  width:280px;
+  top:20%;
+  left:-300px;
+  z-index:2;
+  opacity:0.9;
+  animation: flyDragon 18s linear infinite;
+}
+
+@keyframes flyDragon{
+  0%{ left:-300px; top:20%; transform:scale(1) rotate(0deg);} 
+  50%{ top:10%; transform:scale(1.1) rotate(5deg);} 
+  100%{ left:110%; top:25%; transform:scale(1) rotate(-5deg);} 
+}
+
+/* Portal animado */
+.portal{
+  position:absolute;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  border:6px solid #9333ea;
+  box-shadow:0 0 40px #9333ea inset, 0 0 40px #9333ea;
+  animation:spin 8s linear infinite;
+  z-index:1;
+}
+
+@keyframes spin{
+  from{ transform:rotate(0deg);} 
+  to{ transform:rotate(360deg);} 
+}
+
+/* Partículas End */
+.particle{
+  position:absolute;
+  width:4px;
+  height:4px;
+  background:#c084fc;
+  border-radius:50%;
+  opacity:0.7;
+  animation: float 12s linear infinite;
+}
+
+@keyframes float{
+  from{ transform:translateY(100vh);} 
+  to{ transform:translateY(-10vh);} 
+}
+
+/* Secciones */
+.section{
+  padding:60px 20px;
+  text-align:center;
+  background:#0b0b12;
+}
+
+.card{
+  background:#111827;
+  padding:20px;
+  margin:15px;
+  border-radius:10px;
+  display:inline-block;
+  min-width:220px;
+  box-shadow:0 0 15px rgba(139,92,246,0.4);
+}
+
+.card h3{
+  color:#c084fc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO / LAUNCHER -->
+<div class="hero">
+
+<!-- Dragón -->
+<img class="dragon" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/90/Ender_Dragon.gif" />
+
+<div class="portal"></div>
+
+<div class="content">
+<h1>EnderCore Pixel Studio</h1>
+<p>Launcher • Comunidad • Eventos • Panel Servidor</p>
+<button onclick="playSound()">Abrir Launcher</button>
+</div>
+
+</div>
+
+<!-- EVENTOS -->
+<div class="section">
+<h2>📅 Página de Eventos</h2>
+<div class="card">
+<h3>Owlsafio 2</h3>
+<p>Evento competitivo con retos extremos.</p>
+</div>
+
+<div class="card">
+<h3>End Survival</h3>
+<p>Supervivencia temática del End.</p>
+</div>
+</div>
+
+<!-- COMUNIDAD -->
+<div class="section">
+<h2>🌐 Comunidad</h2>
+<div class="card">
+<h3>Discord</h3>
+<p>Únete a la comunidad y eventos.</p>
+</div>
+
+<div class="card">
+<h3>Foros</h3>
+<p>Comparte ideas y builds.</p>
+</div>
+</div>
+
+<!-- PANEL SERVIDOR -->
+<div class="section">
+<h2>🖥 Panel del Servidor</h2>
+<div class="card">
+<h3>Estado</h3>
+<p>Servidor Online ✔</p>
+</div>
+
+<div class="card">
+<h3>Jugadores</h3>
+<p>24 conectados</p>
+</div>
+</div>
+
+<!-- STAFF / PERFILES -->
+<div class="section">
+<h2>👑 Staff</h2>
+
+<div class="card">
+<h3>Fundador</h3>
+<p>Kai Becker</p>
+</div>
+
+<div class="card">
+<h3>Fundador</h3>
+<p>fz_kiwi</p>
+</div>
+
+<div class="card">
+<h3>Co-owner</h3>
+<p>wakecasti</p>
+</div>
+
+<div class="card">
+<h3>Moderador</h3>
+<p>angelmacias00_39373</p>
+</div>
+
+</div>
+
+<!-- AUDIO AMBIENTAL -->
+<audio id="ambient" loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9c3b88.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const ambient = document.getElementById("ambient");
+
+function playSound(){
+ambient.volume = 0.4;
+ambient.play();
+}
+
+/* Partículas End */
+for(let i=0;i<60;i++){
+let p = document.createElement("div");
+p.classList.add("particle");
+p.style.left = Math.random()*100+"vw";
+p.style.animationDuration = (Math.random()*10+6)+"s";
+document.body.appendChild(p);
+}
+
+</script>
+
+</body>
+</html>
