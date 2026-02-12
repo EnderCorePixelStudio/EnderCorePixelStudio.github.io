@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnderCore Pixel Studio</title>
+
+<script src="https://unpkg.com/skinview3d@3.0.0/bundles/skinview3d.bundle.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Trebuchet MS;}
+body{color:white;background:black;overflow-x:hidden;}
+
+.section{padding:60px 20px;text-align:center;background:#0b0b12;}
+.card{background:#111827;padding:20px;margin:15px;border-radius:12px;display:inline-block;min-width:260px;box-shadow:0 0 15px rgba(139,92,246,0.4);transition:0.3s;}
+.card:hover{transform:scale(1.05);} 
+
+.badge{display:inline-block;padding:4px 10px;border-radius:8px;margin-top:5px;animation:badgeGlow 2s infinite alternate;}
+.badge-founder{background:#9333ea;}
+.badge-owner{background:#2563eb;}
+.badge-mod{background:#16a34a;}
+
+@keyframes badgeGlow{from{box-shadow:0 0 5px white;}to{box-shadow:0 0 20px white;}}
+
+.staff-btn{margin-top:10px;padding:8px 15px;background:#5865F2;border:none;border-radius:6px;color:white;cursor:pointer;}
+
+h1{font-size:4rem;text-shadow:0 0 20px purple;}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="section">
+<h1>🐉 EnderCore Pixel Studio</h1>
+<p>Eventos • Comunidad • Network Minecraft • Launcher</p>
+</div>
+
+<!-- SERVIDOR -->
+<div class="section">
+<h2>🖥 Estado del Servidor</h2>
+<div class="card">
+<p id="serverStatus">Cargando...</p>
+</div>
+</div>
+
+<!-- STAFF 3D REAL -->
+<div class="section">
+<h2>👑 Staff</h2>
+
+<div class="card">
+<canvas id="skinKai" width="220" height="320"></canvas>
+<h3>Kai Becker</h3>
+<span class="badge badge-founder">Fundador</span><br>
+<button class="staff-btn" onclick="window.open('https://discord.com')">Discord</button>
+</div>
+
+<div class="card">
+<canvas id="skinKiwi" width="220" height="320"></canvas>
+<h3>fz_kiwi</h3>
+<span class="badge badge-founder">Fundador</span><br>
+<button class="staff-btn" onclick="window.open('https://discord.com')">Discord</button>
+</div>
+
+<div class="card">
+<canvas id="skinWake" width="220" height="320"></canvas>
+<h3>wakecasti</h3>
+<span class="badge badge-owner">Co-owner</span><br>
+<button class="staff-btn" onclick="window.open('https://discord.com')">Discord</button>
+</div>
+
+<div class="card">
+<canvas id="skinMod" width="220" height="320"></canvas>
+<h3>angelmacias00_39373</h3>
+<span class="badge badge-mod">Moderador</span><br>
+<button class="staff-btn" onclick="window.open('https://discord.com')">Discord</button>
+</div>
+
+</div>
+
+<!-- EVENTOS -->
+<div class="section">
+<h2>🎉 Eventos</h2>
+
+<div class="card">
+<h3>Owlsafio 2</h3>
+<p>Evento hardcore con ruletas, desafíos extremos y recompensas.</p>
+</div>
+
+<div class="card">
+<h3>Eventos PvP End</h3>
+<p>Batallas en el End con tormentas y dragón activo.</p>
+</div>
+
+</div>
+
+<!-- PROYECTOS -->
+<div class="section">
+<h2>📦 Proyectos</h2>
+
+<div class="card">
+<h3>MetropolisLifeRP Network 5.0</h3>
+<p>Servidor Roleplay avanzado con economía, trabajos y ciudades.</p>
+</div>
+
+<div id="projectList"></div>
+
+</div>
+
+<!-- SERVIDORES DISCORD -->
+<div class="section">
+<h2>💬 Servidores Discord</h2>
+
+<div class="card">
+<h3>EnderCore Hosting</h3>
+<button class="staff-btn" onclick="window.open('https://discord.gg/sRvZyQQYhj')">Unirse</button>
+</div>
+
+<div class="card">
+<h3>EnderCore Pixel Studio</h3>
+<button class="staff-btn" onclick="window.open('https://discord.gg/urzxEEtqfn')">Unirse</button>
+</div>
+
+</div>
+
+<!-- SOBRE EL ESTUDIO -->
+<div class="section">
+<h2>🏢 Sobre EnderCore Pixel Studio</h2>
+
+<div class="card">
+<p>EnderCore Pixel Studio es un estudio enfocado en crear eventos, series, networks y experiencias únicas dentro del universo Minecraft. Nuestro objetivo es desarrollar comunidades grandes con sistemas innovadores, jugabilidad avanzada y estética profesional.</p>
+</div>
+
+</div>
+
+<script>
+
+/* SKINS 3D CON ANIMACIÓN */
+function viewer(canvas, skin){
+let v = new skin.SkinViewer({
+canvas: document.getElementById(canvas),
+skin: skin,
+width:220,
+height:320
+});
+
+v.animation = new skin.WalkingAnimation();
+v.controls.enableZoom = true;
+v.controls.enablePan = true;
+v.controls.autoRotate = true;
+}
+
+viewer("skin","https://www.minecraftskins.com/uploads/skins/2023/07/05/sasaki-shuumei-21761022.png?v940");
+viewer("skin","https://www.minecraftskins.com/uploads/skins/2025/12/13/-kiwi-jermany--*persona-hardcore-series-skin*--23714455.png?v940");
+viewer("skin","https://www.minecraftskins.com/uploads/skins/2023/07/05/mya-chan--miyano-yoshikazu--21761019.png?v940");
+viewer("skin","https://www.minecraftskins.com/uploads/skins/2022/05/19/-s-o-f-t-b-o-y--20333104.png?v940");
+
+/* SERVIDOR */
+fetch("https://api.mcsrvstat.us/2/play.metropolisnetwork.hidenmc.com")
+.then(res=>res.json())
+.then(data=>{
+ document.getElementById("serverStatus").innerText = data.online ? "Online con " + data.players.online + " jugadores" : "Offline";
+});
+
+</script>
+
+</body>
+</html>
