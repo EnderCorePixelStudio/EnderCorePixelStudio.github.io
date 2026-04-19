@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EnderCore Pixel Studio</title>
+
+<style>
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at center,#2a003f,#12001c);color:#fff;overflow-x:hidden}
+  .dragon-breath{position:fixed;width:100%;height:100%;background:radial-gradient(circle,rgba(180,0,255,.4) 0%,rgba(0,0,0,0) 70%);animation:breath 6s infinite alternate ease-in-out;z-index:-1}
+  @keyframes breath{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.5);opacity:.9}}
+
+  header{text-align:center;padding:60px 20px}
+  header h1{font-size:48px;color:#d67aff;text-shadow:0 0 20px #a000ff;margin:0}
+  header p{color:#ccc;margin-top:10px}
+
+  .section{max-width:1200px;margin:auto;padding:50px 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+
+  .card{background:rgba(255,255,255,.05);border:1px solid #a000ff;border-radius:12px;padding:20px;text-align:center;transition:.3s}
+  .card:hover{transform:translateY(-8px);box-shadow:0 0 20px #a000ff}
+  .card h3{color:#d67aff;margin-top:0}
+  .desc{color:#cfc3ff;font-size:14px;margin-top:8px}
+
+  .skin-preview img{max-width:140px;image-rendering:pixelated;border:2px solid #a000ff;border-radius:8px;margin-top:10px}
+
+  input[type=text],input[type=file]{width:80%;padding:10px;border-radius:6px;border:none;margin-top:10px}
+  button{margin-top:10px;padding:10px 20px;background:#a000ff;border:none;color:white;border-radius:6px;cursor:pointer}
+
+  .role-title{margin-top:40px;color:#d9a6ff}
+
+  .discord{text-align:center;padding:60px 20px;background:rgba(0,0,0,.4);border-top:2px solid #a000ff}
+  .discord a{display:block;margin:10px auto;padding:12px 30px;background:#a000ff;color:white;text-decoration:none;border-radius:8px;width:max-content}
+
+  footer{text-align:center;padding:20px;color:#aaa}
+</style>
+</head>
+<body>
+<div class="dragon-breath"></div>
+
+<header>
+  <h1>EnderCore Pixel Studio</h1>
+  <p>Desarrollo de experiencias, servidores y comunidades en Roblox, Minecraft y Discord</p>
+</header>
+
+<!-- DESCRIPCIÓN GENERAL -->
+<section class="section">
+  <div class="card">
+    <h3>¿Qué es EnderCore Pixel Studio?</h3>
+    <p class="desc">EnderCore Pixel Studio es un estudio creativo dedicado al desarrollo de juegos, servidores y experiencias para comunidades. Nos especializamos en Roblox, Minecraft y gestión de comunidades en Discord, creando proyectos únicos, dinámicos y entretenidos.</p>
+  </div>
+</section>
+
+<!-- PROYECTOS ROBLOX -->
+<section class="section">
+  <h2 style="display:flex;align-items:center;gap:10px;justify-content:center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.svg" alt="Roblox" style="height:28px;filter:drop-shadow(0 0 6px #a000ff)">
+      🎮 Proyectos Roblox
+    </h2>
+  <p class="desc">Nuestros juegos en Roblox están diseñados para ofrecer diversión rápida, mecánicas originales y experiencias llamativas para todo tipo de jugadores.</p>
+  <div class="grid">
+    <div class="card"><h3>Sin Señal</h3><p class="desc">Una experiencia misteriosa donde la comunicación desaparece y el jugador debe sobrevivir en un entorno inquietante.</p></div>
+    <div class="card"><h3>Steal de Anime 2.0</h3><p class="desc">Juego competitivo donde los jugadores roban personajes y mejoran sus habilidades en un sistema dinámico.</p></div>
+    <div class="card"><h3>Rompe un Bloque de la Suerte</h3><p class="desc">Rompe bloques con recompensas aleatorias que pueden cambiar totalmente el rumbo de la partida.</p></div>
+    <div class="card"><h3>Escapa de Tsunami</h3><p class="desc">Corre, salta y sobrevive a un tsunami gigante superando obstáculos y plataformas.</p></div>
+  </div>
+</section>
+
+<!-- PROYECTOS MINECRAFT -->
+<section class="section">
+  <h2 style="display:flex;align-items:center;gap:10px;justify-content:center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Minecraft_logo.svg" alt="Minecraft" style="height:28px;filter:drop-shadow(0 0 6px #a000ff)">
+      ⛏️ Proyectos Minecraft
+    </h2>
+  <p class="desc">Creamos servidores de Minecraft con temáticas únicas, sistemas personalizados y comunidades activas.</p>
+  <div class="grid">
+    <div class="card"><h3>Owlsafio 2</h3><p class="desc">Servidor con retos, supervivencia avanzada y eventos constantes para los jugadores más competitivos.</p></div>
+    <div class="card"><h3>MetropolisLifeRP Network</h3><p class="desc">Servidor Roleplay ambientado en una gran ciudad con trabajos, economía y vida realista.</p></div>
+    <div class="card"><h3>Guardianesland</h3><p class="desc">Mundo de aventuras donde los jugadores deben proteger territorios y enfrentarse a desafíos cooperativos.</p></div>
+  </div>
+</section>
+
+<!-- PROYECTOS DISCORD -->
+<section class="section">
+  <h2 style="display:flex;align-items:center;gap:10px;justify-content:center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord" style="height:28px;filter:drop-shadow(0 0 6px #a000ff)">
+      💬 Proyectos de Servidores Discord
+    </h2>
+  <p class="desc">Gestionamos y desarrollamos comunidades en Discord con sistemas organizados, bots personalizados y espacios para cada proyecto.</p>
+  <div class="grid">
+    <div class="card"><h3>EnderCore Hosting</h3><p class="desc">Servidor dedicado al soporte, servicios de hosting y atención a clientes de la comunidad.</p></div>
+  </div>
+</section>
+
+<!-- EQUIPO STAFF -->
+<section class="section">
+  <h2>👑 Equipo Staff</h2>
+
+  <h3 class="role-title">Fundadores</h3>
+  <div class="grid">
+    <div class="card"><h3>Kai Becker</h3><p>Fundador</p><div class="skin-preview"></div></div>
+    <div class="card"><h3>Czc_elohimbj</h3><p>Fundador</p><div class="skin-preview"></div></div>
+    <div class="card"><h3>fz_kiwi</h3><p>Fundador</p><div class="skin-preview"></div></div>
+    <div class="card"><h3>Fz_Platanitho</h3><p>Fundador</p><div class="skin-preview"></div></div>
+  </div>
+
+  <h3 class="role-title">Manager</h3>
+  <div class="grid">
+    <div class="card"><h3>wakecasti</h3><p>Manager</p><div class="skin-preview"></div></div>
+  </div>
+
+  <h3 class="role-title">Moderadores</h3>
+  <div class="grid">
+    <div class="card"><h3>angelmacias00_39373</h3><p>Moderador</p><div class="skin-preview"></div></div>
+  </div>
+
+  <h3>Añadir / cambiar skins del Staff</h3>
+  <input type="text" id="skinUrl" placeholder="URL de la skin (.png)">
+  <input type="file" id="skinFile" accept="image/png">
+  <br>
+  <button onclick="applySkin()">Aplicar Skin al cuadro seleccionado</button>
+</section>
+
+<footer>
+  © 2026 EnderCore Pixel Studio
+</footer>
+
+<script>
+let lastSkinTarget=null;
+document.querySelectorAll('.skin-preview').forEach(el=>{
+  el.addEventListener('click',()=>{lastSkinTarget=el;alert('Cuadro seleccionado. Ahora carga la skin.');});
+});
+function applySkin(){
+  if(!lastSkinTarget)return;
+  const url=document.getElementById('skinUrl').value;
+  const file=document.getElementById('skinFile').files[0];
+  lastSkinTarget.innerHTML='';
+  const img=document.createElement('img');
+  if(url){img.src=url;}else if(file){img.src=URL.createObjectURL(file);}else{return;}
+  lastSkinTarget.appendChild(img);
+}
+</script>
+</body>
+</html>
